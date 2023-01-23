@@ -1,3 +1,4 @@
+<?php require_once "account/config.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Gamoo</title>
+</head>
+<body>
     <div class="nav">
         <nav>
             <li><a href=""><i class="material-icons">person</i></a></li>
@@ -17,8 +20,44 @@
             <li><a href=""><i class="material-icons">settings</i></a></li>
         </nav>
     </div>
-
-</head>
-<body>
+    <?php
+        if(isset($_SESSION['user'])){
+            echo 'salut';
+        }
+        else{
+            echo "<a href='account/signupform.php'>Hello</a>";
+        }
+    ?>
+    <div class="midblock">
+        
+    </div>
 </body>
 </html>
+
+<script>
+        <?php
+        if(isset($_SESSION['errorsignup'])){
+            echo "
+                $(document).ready(function(){
+                    $('#signup').modal('open');
+                });
+            ";
+            echo "
+            M.toast({html: '".$_SESSION['errorsignup']."', classes: 'rounded red'});
+        ";
+        unset($_SESSION['errorsignup']);
+        }else{
+            if(isset($_SESSION['errorlogin'])){
+                echo "
+                    $(document).ready(function(){
+                        $('#login').modal('open');
+                    });
+                ";
+                echo "
+                M.toast({html: '".$_SESSION['errorlogin']."', classes: 'rounded red'});
+            ";
+            unset($_SESSION['errorlogin']);
+            }
+        }
+        ?>
+    </script>

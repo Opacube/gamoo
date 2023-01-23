@@ -12,7 +12,6 @@
                 <form method="post" action="signup.php" enctype="multipart/form-data">
                     <div class="containermodal">
                             <input type='text' name='email' placeholder='Email'>
-                            <input type='text' name='backupemail' placeholder='Backup Email'>
                             <input type='text' name='username' placeholder='Username'>
                             <input type='password' name='password' placeholder='Password'>
                             <input type='file' name='image'>

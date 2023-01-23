@@ -1,0 +1,36 @@
+body{
+    background-color: #154072;
+    top: 0;
+    bottom: 0;
+}
+
+nav{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.nav{
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1%;
+    border: solid;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-top-left-radius: 100% 25%;
+    border-top-right-radius: 100% 25%;
+    border-bottom-left-radius: 100% 25%;
+    border-bottom-right-radius: 100% 25%;
+    float: left;
+    border-width: 1px;
+    background-color: #011444;
+}
+
+.material-icons{
+    color:#FFE6B5;
+    font-size: 250%;
+}

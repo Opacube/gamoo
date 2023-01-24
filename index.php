@@ -16,7 +16,7 @@
             <li><a href=""><i class="material-icons">feed</i></a></li>
             <li<a href=""><i class="material-icons">search</i></a></li>
             <li><a href=""><i class="material-icons">chat_bubble</i></a></li>
-            <li><a href="/account/friend.php"><i class="material-icons">groups</i></a></li>
+            <li><a href="account/friend.php"><i class="material-icons">groups</i></a></li>
             <li><a href=""><i class="material-icons">settings</i></a></li>
         </nav>
     </div>

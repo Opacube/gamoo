@@ -25,7 +25,7 @@
             'password' => 'glaçon',
             'secret_q' => 'Tu habites ou',
             'secret_ans' => 'à Paris',
-            'pfp' => '../img/zerotwo.jpeg',
+            'pfp' => 'zerotwo.jpeg',
             'bio' => 'youhou',
             'country' => 'France',
             'area' => 'PACA',
@@ -59,7 +59,7 @@
                         ?>
                         <li class="collection-item avatar indigo lighten-3 ">
                             <div class="">
-                                <img src="<?php echo $utilisateur["pfp"]; ?>" alt="pfp" class="circle">
+                                <img src="<?php echo '../img/'.$utilisateur["pfp"]; ?>" alt="pfp" class="circle">
                                 <p class="title black-text">
                                     <?php echo $utilisateur["username"] ?>
                                 </p>
@@ -75,7 +75,7 @@
                                 <span class="title black-text">
                                     <?php echo $friend["username"] ?>
                                 </span>     
-                                <img src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                                <img src="<?php echo '../img/'.$friend["pfp"]; ?>" alt="pfp" class="circle">
                                 <p><?php echo $message['text']?></p>
                             </div>
                         </li>

@@ -1,4 +1,4 @@
-<script>console.log(<?php echo $_POST['id_user_delete']?>)</script>
+
 <?php
     require_once "config.php" ;
 

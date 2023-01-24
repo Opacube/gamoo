@@ -28,16 +28,16 @@
                 foreach ($data as $user => $friend){
                     ?><a class="modal-trigger" href="<?php echo "#modal".$friend["id_user"]; ?>">
                         <li class="collection-item avatar indigo lighten-3 ">
-                            <img src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                            <img src="<?php echo "../img/".$friend["pfp"]; ?>" alt="pfp" class="circle">
                             <span class="title black-text"><?php echo $friend["username"]?></span>
-                            <a href="message/<?php echo $friend["username"].$friend["id_user"];?>" class="secondary-content"><i class="material-icons">chat</i></a>
+                            <a href="channel" class="secondary-content"><i class="material-icons">chat</i></a>
                         </li>
                     </a>
                     <!-- Modal qui affiche le profil de l'utilisateur choisi -->
                         <div id="<?php echo "modal".$friend["id_user"]?>" class="modal indigo lighten-3">
                             <div class="modal-content">
                                 <div>
-                                    <img width="20%" src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                                    <img width="20%" src="<?php echo "../img/".$friend["pfp"]; ?>" alt="pfp" class="circle">
                                     <div class="secondary-content black-text"><?php echo $friend["country"].", ".$friend["area"]; ?></div>
                                 </div>
                                 <div class="">

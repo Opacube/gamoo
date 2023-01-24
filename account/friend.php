@@ -37,7 +37,7 @@
                         <div id="<?php echo "modal".$friend["id_user"]?>" class="modal indigo lighten-3">
                             <div class="modal-content">
                                 <div>
-                                    <img src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                                    <img width="20%" src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
                                     <div class="secondary-content black-text"><?php echo $friend["country"].", ".$friend["area"]; ?></div>
                                 </div>
                                 <div class="">
@@ -62,7 +62,6 @@
                 echo 'No friend';
             };
         ?>
-        </div>
         <script src="../js/jquery.min.js"></script>
         <script  src="../js/materialize.min.js"></script>
         <script>

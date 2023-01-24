@@ -42,3 +42,19 @@ nav{
     color: #FFE6B5
 }
 
+div.channel {
+    width: 60%;
+    margin: auto;
+    margin-top: 2%;
+    height:900px;
+
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+    overflow: auto;
+}
+
+div.reversed {
+    display: flex;
+    flex-direction: row-reverse;
+}

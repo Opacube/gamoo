@@ -2,7 +2,7 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
     </head>
     <body>
         
@@ -26,21 +26,29 @@
             if(isset($data)){
                 ?><ul class='collection'><?php
                 foreach ($data as $user => $friend){
-                    ?><li class="collection-item avatar indigo lighten-3">
-                        <a class="modal-trigger" href="<?php echo "#modal".$friend["id_user"]?>"><img src="<?php echo $friend["pfp"] ?>" alt="pfp" class="circle"></a>
-                        <span class="title"><?php echo $friend["username"]?></span>
-                        <a href="message/<?php echo $friend["username"].$friend["id_user"]?>" class="secondary-content"><i class="material-icons">chat</i></a>
-                    </li>
+                    ?><a class="modal-trigger" href="<?php echo "#modal".$friend["id_user"]; ?>">
+                        <li class="collection-item avatar indigo lighten-3 ">
+                            <img src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                            <span class="title black-text"><?php echo $friend["username"]?></span>
+                            <a href="message/<?php echo $friend["username"].$friend["id_user"];?>" class="secondary-content"><i class="material-icons">chat</i></a>
+                        </li>
+                    </a>
                     <!-- Modal qui affiche le profil de l'utilisateur choisi -->
                         <div id="<?php echo "modal".$friend["id_user"]?>" class="modal indigo lighten-3">
                             <div class="modal-content">
-                                <h4><img src="<?php echo $friend["pfp"] ?>" alt="pfp" class="circle"><?php echo $friend["username"] ?></h4>
-                                <p><?php echo $friend["bio"]?></p>
+                                <div>
+                                    <img src="<?php echo $friend["pfp"]; ?>" alt="pfp" class="circle">
+                                    <div class="secondary-content black-text"><?php echo $friend["country"].", ".$friend["area"]; ?></div>
+                                </div>
+                                <div class="">
+                                    <h4><?php echo $friend["username"]; ?></h4>
+                                    <p><?php echo $friend["bio"]; ?></p>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <!--Pour delete un ami, l'action du form va vers le fichier php qui fait une requete delete-->
-                                <form action="delete_friend.php">
-                                    <input type="hidden" name="id_user" value="<?php echo $friend["id_user"] ?>"></input>
+                                <form action="delete_friend.php" method="post">
+                                    <input type="hidden" name="id_user_delete" value="<?php echo $friend["id_user"]; ?>"></input>
                                     <submit class="modal-close waves-effect waves-green btn-flat">Supprimer</submit>
                                 </form>
                             </div>

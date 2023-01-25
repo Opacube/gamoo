@@ -54,10 +54,6 @@ div.channel {
     width: 60%;
     margin: auto;
     margin-top: 2%;
-    height: 800px;
-
-    display: flex;
-    flex-direction: column-reverse;
 }
 
 div.channel-text {
@@ -72,4 +68,6 @@ div.reversed {
     flex-direction: row-reverse;
 }
 
-
+body.full-height {
+    height:max-content;
+}

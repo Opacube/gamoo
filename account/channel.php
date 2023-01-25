@@ -15,7 +15,7 @@
 
 
         //Il faut modifier $id par $SESSION_user['id_user']
-        $id_de_session = '1';
+        $id_de_session = $_SESSION['user']['id_user'];
 
         $utilisateur = array(
             'id_user' => '2',

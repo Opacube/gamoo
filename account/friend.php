@@ -11,13 +11,13 @@
 
         
 
-            //Il faut modifier $id par $SESSION_user['id_user']
-            $id = 1;
+            //Il faut modifier $id par $SESSION_user['id']
+            $id = 11;
 
 
-            $sql = "SELECT u.username, u.pfp, u.id_user, u.bio, u.country, u.area FROM `friend`
+            $sql = "SELECT u.username, u.img, u.id, u.bio, u.country FROM `friend`
                     INNER JOIN `user` u
-                    ON friend.id_user_2 = u.id_user
+                    ON friend.id_user_2 = u.id
                     WHERE id_user_1 = $id or id_user_2 = $id and accept = 1
                     ORDER BY u.username";  
             $pre = $pdo->prepare($sql);
@@ -26,19 +26,19 @@
             if(isset($data)){
                 ?><ul class='collection'><?php
                 foreach ($data as $user => $friend){
-                    ?><a class="modal-trigger" href="<?php echo "#modal".$friend["id_user"]; ?>">
+                    ?><a class="modal-trigger" href="<?php echo "#modal".$friend["id"]; ?>">
                         <li class="collection-item avatar indigo lighten-3 ">
-                            <img src="<?php echo "../img/".$friend["pfp"]; ?>" alt="pfp" class="circle">
+                            <img src="<?php echo "../img/".$friend["img"]; ?>" alt="img" class="circle">
                             <span class="title black-text"><?php echo $friend["username"]?></span>
                             <a href="channel" class="secondary-content"><i class="material-icons">chat</i></a>
                         </li>
                     </a>
                     <!-- Modal qui affiche le profil de l'utilisateur choisi -->
-                        <div id="<?php echo "modal".$friend["id_user"]?>" class="modal indigo lighten-3">
+                        <div id="<?php echo "modal".$friend["id"]?>" class="modal indigo lighten-3">
                             <div class="modal-content">
                                 <div>
-                                    <img width="20%" src="<?php echo "../img/".$friend["pfp"]; ?>" alt="pfp" class="circle">
-                                    <div class="secondary-content black-text"><?php echo $friend["country"].", ".$friend["area"]; ?></div>
+                                    <img width="20%" src="<?php echo "../img/".$friend["img"]; ?>" alt="img" class="circle">
+                                    <div class="secondary-content black-text"><?php echo $friend["country"]; ?></div>
                                 </div>
                                 <div class="">
                                     <h4><?php echo $friend["username"]; ?></h4>
@@ -47,9 +47,9 @@
                             </div>
                             <div class="modal-footer">
                                 <!--Pour delete un ami, l'action du form va vers le fichier php qui fait une requete delete-->
-                                <form action="delete_friend.php" method="post">
-                                    <input type="hidden" name="id_user_delete" value="<?php echo $friend["id_user"]; ?>"></input>
-                                    <submit class="modal-close waves-effect waves-green btn-flat">Supprimer</submit>
+                                <form action="delete_friend.php" method="POST">
+                                    <input type="hidden" name="id_user_delete" value="<?php echo $friend["id"]; ?>"></input>
+                                    <input type="submit" class="modal-close waves-effect waves-green btn-flat" value="Supprimer"></input>
                                 </form>
                             </div>
                         </div>

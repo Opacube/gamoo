@@ -42,19 +42,34 @@ nav{
     color: #FFE6B5
 }
 
+/* met en place une scroll barre sur les messages */
+.scroll{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    overflow: auto;
+    
+}
+
 div.channel {
     width: 60%;
     margin: auto;
     margin-top: 2%;
-    height:900px;
+    height: 800px;
 
-    overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
-    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+div.channel-text {
+    width: 60%;
+    margin: auto;
+    height: 60px;
+    color: black!important;
 }
 
 div.reversed {
     display: flex;
     flex-direction: row-reverse;
 }
+
+

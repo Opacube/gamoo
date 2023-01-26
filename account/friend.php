@@ -8,6 +8,7 @@
         
         <?php
             require_once "config.php";
+            require "../components/addFriend.php";
 
         
 
